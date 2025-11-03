@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Practice Challenges</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
+    <h1 class="text-3xl font-bold mb-8">JavaScript Condition & Logic Playground</h1>
+
+    <div class="grid md:grid-cols-2 gap-6 w-11/12 max-w-4xl">
+      <!-- 1️⃣ Max of Three Numbers -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">
+          Find Maximum of Three Numbers
+        </h2>
+        <div class="flex flex-col gap-2">
+          <input
+            id="num1"
+            type="number"
+            placeholder="Enter number A"
+            class="border rounded p-2"
+          />
+          <input
+            id="num2"
+            type="number"
+            placeholder="Enter number B"
+            class="border rounded p-2"
+          />
+          <input
+            id="num3"
+            type="number"
+            placeholder="Enter number C"
+            class="border rounded p-2"
+          />
+          <button
+            onclick="findMax()"
+            class="bg-blue-600 text-white rounded p-2 hover:bg-blue-700"
+          >
+            Find Max
+          </button>
+          <p id="maxResult" class="mt-2 text-gray-700 font-medium"></p>
+        </div>
+      </div>
+
+      <!-- 2️⃣ Triangle Type -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Triangle Type Checker</h2>
+        <input
+          id="sideA"
+          type="number"
+          placeholder="Side A"
+          class="border rounded p-2 mb-2"
+        />
+        <input
+          id="sideB"
+          type="number"
+          placeholder="Side B"
+          class="border rounded p-2 mb-2"
+        />
+        <input
+          id="sideC"
+          type="number"
+          placeholder="Side C"
+          class="border rounded p-2"
+        />
+        <button
+          onclick="checkTriangleType()"
+          class="mt-2 bg-indigo-600 text-white rounded p-2 hover:bg-indigo-700 w-full"
+        >
+          Check
+        </button>
+        <p id="triangleResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+      <!-- 3️⃣ Electricity Bill -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Electricity Bill Calculator</h2>
+        <input
+          id="units"
+          type="number"
+          placeholder="Enter used units"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="calculateBill()"
+          class="mt-2 bg-purple-600 text-white rounded p-2 hover:bg-purple-700 w-full"
+        >
+          Calculate
+        </button>
+        <p id="billResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+
+      <!-- 4️⃣ Vowel or Consonant -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Check Vowel or Consonant</h2>
+        <input
+          id="charInput"
+          type="text"
+          maxlength="1"
+          placeholder="Enter one character"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="checkVowel()"
+          class="mt-2 bg-pink-600 text-white rounded p-2 hover:bg-pink-700 w-full"
+        >
+          Check
+        </button>
+        <p id="vowelResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+
+      <!-- 5️⃣ Leap Year -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Check Leap Year</h2>
+        <input
+          id="yearInput"
+          type="number"
+          placeholder="Enter year"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="checkLeapYear()"
+          class="mt-2 bg-yellow-600 text-white rounded p-2 hover:bg-yellow-700 w-full"
+        >
+          Check
+        </button>
+        <p id="leapResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+
+      <!-- 6️⃣ Character Type -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Character Type</h2>
+        <input
+          id="charTypeInput"
+          type="text"
+          maxlength="1"
+          placeholder="Enter a character"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="getCharType()"
+          class="mt-2 bg-orange-600 text-white rounded p-2 hover:bg-orange-700 w-full"
+        >
+          Check
+        </button>
+        <p id="charTypeResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+
+      <!-- 7️⃣ Check Number Sign-->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Check Number Sign</h2>
+        <input
+          id="checkNum"
+          type="number"
+          placeholder="Enter a number"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="checkSign()"
+          class="mt-2 bg-green-600 text-white rounded p-2 hover:bg-green-700 w-full"
+        >
+          Check
+        </button>
+        <p id="signResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+
+      <!-- 8️⃣ Income Tax -->
+      <div class="bg-white p-5 rounded-2xl shadow">
+        <h2 class="text-lg font-semibold mb-2">Income Tax Calculator</h2>
+        <input
+          id="income"
+          type="number"
+          placeholder="Enter income"
+          class="border rounded p-2 w-full"
+        />
+        <button
+          onclick="calculateTax()"
+          class="mt-2 bg-red-600 text-white rounded p-2 hover:bg-red-700 w-full"
+        >
+          Calculate
+        </button>
+        <p id="taxResult" class="mt-2 text-gray-700 font-medium"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
